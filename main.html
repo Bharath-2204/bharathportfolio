@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Californian FB;
+            background-color: #ff0000; /* Bright Red Background */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 1.6;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000000; /* Black background */
+            padding: 40px 0;
+            animation: slideInFromTop 1.5s ease-out;
+        }
+        
+        h1 {
+            font-size: 3em;
+            color: #ffffff;
+            text-shadow: 3px 3px 5px #000;
+            margin-bottom: 10px;
+        }
+        
+        
+        /* Section Styles */
+        section {
+            padding: 0px;
+            margin: 40px auto;
+            width: 80%;
+            background-color: #ff0000; /* Bright Red Background for sections */
+            border-radius: 12px;
+            animation: fadeInUp 1.5s ease-out;
+            box-shadow: none; /* Remove shadow */
+            border: none; /* Remove border */
+        }
+
+        section#about, section#projects, section#contact {
+            animation-delay: 0.5s;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* Project Card Styles */
+        .project-card {
+        background-color: #1e1e1e; /* Terminal-like dark background */
+        color: #00ff00; /* Green text */
+        padding: 30px;
+        font-family: 'Courier New', monospace;
+        border: 1px solid #1e1e1e; /* Match background to remove border effect */
+        border-radius: 5px;
+        box-shadow: none; /* No glow or light when not hovered */
+        max-width: 500px;
+        margin: 0 auto;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: fadeInScale 1s ease-out forwards;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover effect - Only black shadow */
+    .project-card:hover {
+        transform: scale(1.07);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.9); /* Strong black shadow */
+    }
+
+        /* Ensure "Projects" Heading is Centered */
+        #projects h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Grid Layout for Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer a {
+            color: #ff4444;
+        }
+
+
+        /* Skills Section */
+/* Skills Section */
+#skills {
+    background-color: #ff0000; /* Black terminal background */
+    color: #00ff00; /* Green text */
+    font-family: 'Courier New', monospace;
+    padding: 30px;
+    width: 80%;
+    margin: 40px auto;
+    border-radius: 10px;
+    /* box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); */
+}
+
+/* Terminal effect */
+.terminal {
+    text-align: left;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 5px;
+    /* border: 1px solid #00ff00; */
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+/* Prompt and commands styling */
+.prompt {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.command {
+    color: #fff;
+    animation: typing 3s steps(30) forwards;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Blinking cursor effect */
+.cursor {
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.command + .command {
+    margin-top: 10px; /* Space between commands */
+}
+
+.command:nth-child(even) {
+    color: #ffff00; /* Yellow commands for variation */
+}
+
+.command:nth-child(odd) {
+    color: #00ff00; /* Keep green commands */
+}
+
+/* Adding the Menu and Actions */
+.terminal-header {
+            font-size: 12px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .terminal-header p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-item {
+            display: inline-block;
+            padding-right: 10px;
+        }
+
+        .sk{
+            font-family: Californian FB;
+            font-size: 20px;
+        }
+
+        .pr{
+            font-family: Californian FB;
+            font-size: 15px;
+        }
+
+        .ab{
+            font-family: Californian FB;
+            font-size: 20px;
+            position: relative;
+            left: -250px;
+        }
+
+
+/* Terminal-style Download Button */
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.terminal-button {
+    background-color: #111;
+    color: #00ff00; /* Green text for terminal effect */
+    
+    padding: 10px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Hover effect for button */
+.terminal-button:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Green glow on hover */
+}
+#about {
+    padding: 20px;
+    background-color: #ff0000; /* Light background color for contrast */
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    width: 60%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-image img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image is contained in a circular shape */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharath Dibbadahalli Hanumanthappa</h1>
+        <p style="color: #ff0000;font-size: 20px;">Cybersecurity Enthusiast | Red Teaming | OSINT | Social Engineering</p>
+    </header>
+    
+    <section id="about">
+        <div class="ab"><h2>About Me</h2></div>
+        <div class="about-container">
+            <div class="about-text">
+                <p style="font-size: 18px;">
+                    I'm a cybersecurity enthusiast currently pursuing my master's in Cybersecurity at the University of Maryland, College Park. I have a strong interest in Red Teaming, OSINT (Open Source Intelligence), and social engineering. To deepen my practical knowledge, I interned at PESU Research Foundation in collaboration with ActiveBytes, where I developed a honeypot network from scratch to enhance threat detection and contributed to building a SIEM tool with features like a honeypot, threat intelligence platform, and automated incident response system. This hands-on experience strengthened my skills in developing, testing, and optimizing modern security solutions. I’ve been sharpening my skills through self-study, hands-on labs, and personal projects in penetration testing, vulnerability assessments, and security assessments.
+                </p>
+                <p style="font-size: 18px;">
+                    Outside of cybersecurity, I'm passionate about crime genres, especially real-life crime podcasts and documentaries. I find the investigation processes and psychological aspects of criminal behavior intriguing, which helps fuel my analytical approach in cybersecurity.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="C:\Users\bhara\Downloads\bharathprofile.jpeg" alt="Your Name" />
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="pr"><h2>PROJECTS</h2></div>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Project 1: AIDORK</h3>
+                <p style="color: #fff;"><span>$</span> <strong>dork --generate "search_query" --scrape --extract "pdf_target"</strong><br> 
+                    AIDORK is an AI-powered tool designed to automate Google Dorking, web scraping, and PDF data extraction. By utilizing the Nous-Hermes-2-Mistral-7B-DPO model (via GPT4All), AIDORK generates optimized Google search queries (dorks) for precise information gathering. It then uses Selenium to scrape relevant content from web pages and PyMuPDF to extract text from PDFs. The gathered data is stored and can be analyzed, with error handling for seamless performance. This tool offers a simple setup, including Google Custom Search Engine integration, for efficient automated data collection and analysis.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2: Keylogger and System Monitoring Tool</h3>
+                <p style="color: #fff;"><span>$</span> <strong>monitor --target "system_activity"</strong><br> 
+                    This Python-based tool helps monitor system activity by logging keystrokes, clipboard content, system details, screenshots, and audio. It also supports emailing the captured data for remote access. Built for ethical and educational purposes, this tool offers an in-depth view of system usage and can be configured for various monitoring tasks. Please ensure you use it responsibly and with consent.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3: Unveiling ADHD - ADHD Detection and Comprehensive Care</h3>
+                <p style="color: #fff;"><span>$</span> <strong>analyze --data "EEG_data"</strong><br> 
+                    In our group project on ADHD, we utilized deep learning models for EEG-based detection, alongside traditional assessments like the Stroop and Posner tests. My role focused on developing a Flask-based website, ensuring smooth integration of all components. I also implemented cybersecurity measures, including secure data transmission and encryption, to protect user data. The platform offers more than detection, featuring a bionic generator, text summarizer, and productivity tools, providing comprehensive support for individuals with ADHD.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 4: Real-time Object Measurement</h3>
+                <p style="color: #fff;"><span>$</span> <strong>measure --object "uploaded_image" --reference "known_dimension"</strong><br> 
+                    Developed a real-time measurement tool using ArUco markers for accurate object sizing. The app allows users to upload images with known reference objects (circular or rectangular) for precise measurements. It supports both laptop webcams and IP webcams (via an Android app). Gained hands-on experience with OpenCV, ArUco markers, Streamlit, and image processing. Received a certificate from the IEEE Computer Society club upon project completion.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 5: Smart Mobility Stick</h3>
+                <p style="color: #fff;"><span>$</span> <strong>navigate --sensor "light, water, proximity" --controller "Arduino Uno" --target "visually_impaired"</strong><br> 
+                    Developed a Smart Mobility Stick to assist visually impaired individuals with navigation. The stick features light, water, and proximity sensors integrated with an Arduino Uno microcontroller, along with reflective stickers and warning lights for added safety. My role focused on optimizing the proximity sensor integration. The project received high praise and a perfect score from our professors, highlighting our team's dedication to creating meaningful solutions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="sk"><h2>SKILLS</h2></div>
+        <div class="terminal">
+            <div class="terminal-header">
+                <p><span class="menu-item">File</span> <span class="menu-item">Edit</span> <span class="menu-item">Actions</span> <span class="menu-item">Help</span></p>
+            </div>
+          
+            <!-- Programming Languages -->
+            <p><span class="prompt">$ Programming Languages</span></p>
+            <p><span class="prompt"></span> <span class="command">> Python, Bash, C, Java, JavaScript (ReactJS)</span></p>
+    
+            <!-- Security Tools -->
+            <p><span class="prompt">$ Security Tools</span></p>
+            <p><span class="prompt"></span> <span class="command">> Metasploit, Burp Suite, Kali Linux, OWASP ZAP, John the Ripper, Mimikatz, Hydra, Nessus, Social-Engineer Toolkit </span></p>
+            <p><span class="prompt"></span> <span class="command">> gophish, crackmapexec, hashcat, evil-winRM, msfvenom, Dnsenum, enum4linux, snmpwalk</span></p>
+            <!-- Networking & Penetration Testing -->
+            <p><span class="prompt">$ Networking & Penetration Testing</span></p>
+            <p><span class="prompt"></span> <span class="command">> Nmap, BeEF, Aircrack-ng, Snort, Netexec, Wireshark</span></p>
+            
+            <!-- Web Development & Frameworks -->
+            <p><span class="prompt">$ Web Development & Frameworks</span></p>
+            <p><span class="prompt"></span> <span class="command">> Flask, ReactJS, OpenCV</span></p>
+    
+            <!-- Databases -->
+            <p><span class="prompt">$ Databases</span></p>
+            <p><span class="prompt"></span> <span class="command">> MySQL, SQLite, MongoDB</span></p>
+            
+            <!-- Cloud & Infrastructure -->
+            <p><span class="prompt">$ Cloud & Infrastructure</span></p>
+            <p><span class="prompt"></span> <span class="command">> AWS, Docker, Jenkins</span></p>
+            
+            <!-- Cybersecurity Frameworks -->
+            <p><span class="prompt">$ Cybersecurity Frameworks</span></p>
+            <p><span class="prompt"></span> <span class="command">> CMMC Framework, NIST Framework</span></p>
+    
+            <!-- Miscellaneous Tools -->
+            <p><span class="prompt">$ Miscellaneous Tools</span></p>
+            <p><span class="prompt"></span> <span class="command">> Postman API, Gophish, Social Engineer Toolkit, CISCO Packet Tracer</span></p>
+            
+            <p><span class="prompt">$</span> <span class="cursor">█</span></p>
+        </div>
+    </section>
+    
+    
+
+    <section id="resume">
+        <h2 style="font-size: 40px;">RESUME</h2>
+        <div class="download-button" style="position: relative; top:-30px;">
+            <button class="terminal-button" onclick="window.location.href='Bharath D H_Updated_Resume.pdf'">
+                <span class="prompt">$</span> download resume
+            </button>
+        </div>
+    </section>
+    
+    
+    <footer>
+        <div class="ft" style="font-size: 18px;">
+        <p>&copy; 2025 Bharath D H | Cybersecurity Portfolio</p>
+        <p>Contact: <a href="bharhanu@terpmail.umd.edu">bharhanu@terpmail.umd.edu</a></p>
+        <p>GitHub: <a href="https://github.com/Bharath-2204" target="_blank">github.com/Bharath-2204</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/bharath-d-h-ba22a2003">Bharath D H</a></p>
+        <p>Crafted with passion and precision.</p></div>
+    </footer>
+</body>
+</html>
